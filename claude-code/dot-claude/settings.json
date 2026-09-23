@@ -1,0 +1,17 @@
+{
+  "env": {
+    "GATEGUARD_BASH_ROUTINE_DISABLED": "1",
+    "GATEGUARD_EXEMPT_GLOBS": "docs/**,**/*.md,tests/**,**/*.test.*",
+    "GATEGUARD_BASH_EXTRA_DESTRUCTIVE": "db:push|drizzle-kit\\s+push"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/ecc/gateguard-hook.js\"" }
+        ]
+      }
+    ]
+  }
+}
