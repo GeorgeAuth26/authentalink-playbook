@@ -9,6 +9,8 @@
 
 ## The rules
 - **Scope is the founder's alone.** Advisors, councils and AIs recommend. They never park, cut or defer an approved feature or design. A recommendation is written as a question with a yes or no.
+- **New work asks "Why now, and why today?" first.** The sprint master shows the cost and what slides; the founder decides. See [one-board.md](../process/one-board.md).
+- **Approval covers the map.** The founder approves a plan's process map with the plan, by name. No map, no approval.
 - **Nothing is approved in advance.** Ever. A plan is approved when the founder reads it and says yes by name.
 - **Rulings are numbered and recorded.** Ruling 42 means the same thing forever. Rulings go into the plan's open-questions section *before* the first build commit.
 - **Blank means skip.** A handoff lists its rulings at the top with a blank for each answer. The builder skips any section whose ruling is blank.
