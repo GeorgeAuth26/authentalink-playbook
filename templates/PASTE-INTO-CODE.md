@@ -24,11 +24,13 @@ Stop and ask if recon contradicts the plan.
 Write the rulings above into [PRD file] section 9, and task changes into section 10. Commit alone.
 
 ## S2 to S[n]. Tasks
-One commit per task, each naming the plan and FR numbers. UI tasks name their board and end with side-by-sides at 375 and 1440.
+Build to the plan's process map, not the prose. One commit per task, each naming the plan and FR numbers. UI tasks name their board and end with side-by-sides at 375 and 1440.
 
 **Stop points:** [where to stop and report instead of continuing].
 
 ## S[last]. Prove it
+- The scorecard: `bash scripts/gates-check.sh docs/prds/gates/[plan].md`, output pasted word for word. No hand-typed receipts.
+- Map check: every box on the plan's map marked Match, Different or Not built, with file and line. One Different stops the merge.
 - Removal checks, red then green, with the count
 - Full test suite with the command named; inherited failures only
 - Baselines unchanged or better

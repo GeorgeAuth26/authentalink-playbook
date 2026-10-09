@@ -5,6 +5,9 @@
 - **What changed from the approved plan, and why:** [each difference, with its ruling number]
 - **Differences from the boards kept on purpose:**
 - **Final qa-gate output:** [link or paste]
+- **Final scorecard run:** [gates-check.sh output, word for word, with the founder's push, publish and smoke receipts signed]
+- **Live map walk:** [each box on the process map checked on the real site: Match / Different]
+- **Atlas:** map moved from Planned to Live [link]
 - **Close read:** errors [ ], analytics [ ], anything odd [ ]
 - **Leftovers added to the debt ledger:** [row ids]
 - **Lessons for future plans:**

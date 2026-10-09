@@ -6,5 +6,6 @@ Status: Draft | Date: | Sprint:
 **Out of scope:** [What this does NOT touch]
 **Connections checked:** [Confirm: no schema / no endpoints / no agents / no scheduled jobs / no new deps]
 **Acceptance criteria:** [Testable statements, each with a removal check]
+**Map:** [Process map: every screen, state, email and side touched, each box with its file and test. See process-map.md]
 **Risk:** [Worst case + rollback plan]
 **Approval:** [owner], by name, ruling [#], [date]
