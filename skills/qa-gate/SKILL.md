@@ -81,6 +81,18 @@ Optional: have your commit hook require `Security review: PASS` (or `FINDINGS LE
 ## Gate 8: PRD verified
 `PRD: [filename] - all acceptance criteria verified: YES/NO`. NO, or no PRD line, = BLOCKED.
 
+If the sprint has a gates checklist (`docs/prds/gates/<plan name>.md`), run `bash scripts/gates-check.sh` on it and paste the output word for word. YES may only be written when its last line shows 0 open runnable gates. Manual gates (push, publish, smoke) may still be open at commit. Never hand-type a receipt or check a box on a runnable gate. A check that couldn't run is open, never skipped. See the playbook's `process/gates-with-receipts.md`.
+
+## Gate 9: Process map check (before merge)
+**Catches:** a build that compiles, passes its tests, and still isn't what the founder approved.
+
+Open the plan's process map. For every box, mark:
+- **Match:** built as drawn. Give file and line.
+- **Different:** built, but not as drawn. Give file and line and say what differs.
+- **Not built:** missing. Give where it should be.
+
+**Verdict:** any Different = BLOCKED. Any Not built = BLOCKED unless the plan says that box comes later. A plan with UI, email or a multi-step flow and no map = BLOCKED. See the playbook's `process/process-maps.md`.
+
 ## Output format
 
 ```
@@ -97,6 +109,8 @@ Gate 5 - Scheduled jobs: PASS / N/A [details]
 Gate 6 - Em dash: PASS / FAIL
 Gate 7 - Reviews: Silent-failure PASS/FINDINGS/NOT RUN; Security PASS/FINDINGS/NOT RUN/N/A; Tests PASS/FINDINGS/NOT RUN/N/A
 Gate 8 - PRD: [file] - all acceptance criteria verified: YES / NO
+Gate 9 - Map check: [n] Match, [n] Different, [n] Not built / N/A (no flow touched) [box: file:line for each]
+Gates checklist: [path] [checker's last line, word for word] / N/A
 
 VERDICT: COMMIT APPROVED / BLOCKED [reason]
 ```
