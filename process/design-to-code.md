@@ -5,7 +5,7 @@ We once shipped screens that looked "like a Google form from 2012" because the d
 - **The design canvas's source file lives in the repo** (the generator with the exact markup and tokens). Every UI prompt points at it. Change the design there first, re-render, then match the code to it.
 - **Every UI task names its board.** A plan without a named board per UI task is not approved.
 - **Design every side of a multi-party flow**: the asker, the confirmer, the viewer. Lean mobile, but every screen gets a desktop version too.
-- **Spec every state**: loading, in flight, success, error, empty, expired.
+- **Spec every state**: loading, in flight, success, error, empty, expired. The process map ([process-maps.md](process-maps.md)) is where every state and side gets drawn; the board is how each one looks.
 - **Side-by-side or it isn't done**, at 375 and 1440 widths.
 - **Brand tokens win** over any generic polish checklist. The polish checklist in `claude-code/` names gaps; only fix a gap when the board agrees.
 - **Every plan and timeline shows where every existing board lands** (which publish). If a ruling parks a design, say so by name.

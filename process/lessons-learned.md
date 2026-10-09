@@ -14,5 +14,9 @@ Each of these cost us real time. Each one is now a rule somewhere in this playbo
 | Screens shipped looking like a form because only PNGs and prose reached the builder. | The design's source file lives in the repo. Side-by-side or it isn't done. |
 | We planned from a stale diagnostic doc. | Check the git log on target files before writing a prompt. |
 | "Committed" got reported as "shipped." | Shipped = merged + pushed + published + live check. |
+| Reports said "verified: YES" before the proofs had run, and one proof was red. Another report's results table looked finished after a crash. | Gates with receipts: only a script checks a box, and the report pastes its output word for word. |
+| A hosting tool's editor saved a stray keystroke in the scorecard as its own commit. The commit gate caught it. | Don't open the scorecard in the hosting editor. Only the script and the builder touch it. |
 | Prompt tweaks stopped improving an AI feature. | Past a point, fix the structure, not the prompt. Trained habits beat instructions. |
+| A product check found 15 differences and 8 cracks between what the founder ruled and what was live. None were bad code; all were memory gaps. | Every plan carries a process map, approved with the plan and checked box by box before merge. |
+| Our first map of the live product, drawn from docs and memory, was wrong on 16 of 37 checks. The builder's map, drawn from the code, was right on all 37. | Maps are drawn from rulings or code, never from memory, and aren't trusted until the builder checks them. |
 | An advisor council's recommendation quietly parked two designs the founder had approved. | Scope is the founder's alone. Recommendations are questions. |

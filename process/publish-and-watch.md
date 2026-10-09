@@ -9,7 +9,7 @@
 - **Success line.** Every publish names, before it goes out, what real-world event proves it worked. For example: "one stranger completes the flow end to end."
 
 ## The live check (right after publish)
-Served files match the proven build. Switches read what they should. New addresses answer "not found" while off. Error tracking is quiet. One real email, if email changed, read in a real inbox.
+Walk the plan's process map on the real site, box by box. Served files match the proven build. Switches read what they should. New addresses answer "not found" while off. Error tracking is quiet. One real email, if email changed, read in a real inbox.
 
 ## Browser QA (read-only, test accounts only)
 Console errors, failed network calls, phone and desktop screenshots, and no mutating journeys (payments, deletes) against production.

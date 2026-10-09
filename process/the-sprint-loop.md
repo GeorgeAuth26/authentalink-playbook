@@ -3,10 +3,10 @@
 Every piece of work runs the same play.
 
 ```
-Plan (Lite or Full) -> Founder approves by name -> Recon -> Plan-confirm STOP -> GO
-  -> Build (one commit per task) -> Proofs -> qa-gate -> Commit -> Push
-  -> Publish (switch off) -> Live check -> Switch on (founder says) -> 72-hour watch
-  -> Close read -> Post-ship addendum
+Plan (Lite or Full) + process map -> Founder approves by name -> Recon -> Plan-confirm STOP -> GO
+  -> Build (one commit per task) -> Proofs -> qa-gate + map check -> Commit -> Push
+  -> Publish (switch off) -> Live check (walk the map) -> Switch on (founder says) -> 72-hour watch
+  -> Close read -> Post-ship addendum -> Atlas: Planned to Live
 ```
 
 ## 1. Plan
@@ -14,8 +14,10 @@ Run the prd-gate. **Lite** when every one of these is true: one module, 3 files 
 
 The heart of a Full plan is **Architecture & Connections**: paste the real current columns of every table touched, list every caller of every changed function (found by search, not memory), and name every scheduled job in the caller chain.
 
+Every plan also carries a **process map**: every screen, state, email and side, drawn from rulings or code, never from memory. See [process-maps.md](process-maps.md).
+
 ## 2. Approve
-The founder reads the plan and says yes by name. Open questions go into the plan with a recommendation each; the founder rules them. Rulings are written into the plan before any code.
+The founder reads the map first, then the plan, and says yes by name. The yes covers the map. Open questions go into the plan with a recommendation each; the founder rules them. Rulings are written into the plan before any code.
 
 ## 3. Recon, then stop
 Every handoff opens with "Confirm your plan before writing any files." The builder does a read-only recon: branch tips, a clean tree, the current baselines, the git log on the target files (diagnostic docs go stale), and the plan lines that no longer match the code. Then it states its plan and stops.
@@ -23,16 +25,16 @@ Every handoff opens with "Confirm your plan before writing any files." The build
 **Sub-decision pauses are mandatory** when work touches the schema and a scheduled job together, or when scope grows materially mid-build.
 
 ## 4. Build
-One commit per task, each naming the plan and its requirement numbers (FR-3, FR-4). Each UI task names the design board it builds.
+First, write the sprint's scorecard: one gate per acceptance criterion ([gates-with-receipts.md](gates-with-receipts.md)). Then one commit per task, each naming the plan and its requirement numbers (FR-3, FR-4). Each UI task names the design board it builds.
 
 ## 5. Prove
-See [proof-standard.md](proof-standard.md). Then qa-gate. It fails closed.
+See [proof-standard.md](proof-standard.md). Then run the scorecard; its last gate runs qa-gate. It fails closed. Before merge, the builder marks every box on the map Match, Different or Not built. One Different stops the merge.
 
 ## 6. Ship
-See [publish-and-watch.md](publish-and-watch.md).
+See [publish-and-watch.md](publish-and-watch.md). The live check walks the map, box by box.
 
 ## 7. Close
-After the watch: a close read (errors, analytics, anything odd), then the **post-ship addendum**: what changed from the plan and why, the final gate output, and lessons. A plan that lies about the system is worse than no plan, so update it to match what shipped.
+After the watch: a close read (errors, analytics, anything odd), then the **post-ship addendum**: what changed from the plan and why, the final gate output, and lessons. A plan that lies about the system is worse than no plan, so update it to match what shipped. Then move the map from Planned to Live in the process atlas.
 
 ## Rhythm
 - **Builds may overlap another publish's watch. Publishes may not.**
