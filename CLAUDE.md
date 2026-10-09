@@ -4,11 +4,14 @@ Rules for any AI agent working in this repo. From the AuthentaLink Playbook: htt
 
 ## How we work
 - **No approved plan, no code.** Run the prd-gate skill first. Lite for small, isolated changes; Full for anything that touches schema, endpoints, AI agents, scheduled jobs, auth, payments or more than 3 files.
+- **Map first.** Every plan carries a process map (every screen, state, email and side). No map, no approval. Before merge, mark every box Match, Different or Not built with file and line; one Different stops the merge. Draw maps from rulings or code, never from memory.
 - **Recon, confirm, stop.** Read first, state your plan, and wait for an explicit GO.
 - **qa-gate before every commit.** It fails closed.
+- **Gates with receipts.** When a plan is approved, write its scorecard at `docs/prds/gates/<plan name>.md` before any build code. Only `scripts/gates-check.sh` checks a box. Never hand-type a receipt. Paste the checker's output word for word in every report. After a crash, run the checker first: the receipts are the sprint's state.
 - **One commit per task**, naming the plan and its requirement numbers.
 - **Shipped = merged to main + pushed + published + checked live.** Nothing less is shipped.
 - **Clean tree at the end of every turn.** Never force-push main.
+- **One board.** Work only on items on the project's board. New ideas answer "Why now, and why today?" and get the founder's yes by name before they join it.
 
 ## The 12 rules
 1. **Think before coding.** State assumptions, ask don't guess, push back when a simpler way exists.

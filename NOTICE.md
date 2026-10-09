@@ -30,3 +30,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## unlazy
+
+The gates-with-receipts idea and checklist format (`process/gates-with-receipts.md`, `templates/gates-checklist.md`, `scripts/gates-check.sh`) are adapted from **unlazy** (https://github.com/Leonxlnx/unlazy, MIT). No unlazy code is included; the script is our own.
