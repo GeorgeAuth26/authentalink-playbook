@@ -15,8 +15,9 @@ Every sprint starts here. The point is to think through every angle, every conne
 2. **Scaffold** the PRD in `docs/prds/` from the template.
 3. **Fill every section** from codebase inspection and the conversation. Mark real unknowns `TBD: [what's needed to resolve]`. Never leave a section blank or skip one silently. Collapsing a section needs a one-line reason.
 4. **Interrogate the connections.** Section 6 is the heart of the document: do the codebase archaeology, don't guess.
-5. **Present to the owner for approval.** Surface open questions and TBDs, each with a recommendation. Wait for an explicit yes by name. Nothing is approved in advance.
-6. **Build against the PRD.** Its acceptance criteria are the checklist qa-gate verifies before commit.
+4b. **Draw the process map** (section 5b, Lite: the Map line). Every screen, every state (loading, in flight, success, error, empty, expired), every email, every side (asker, confirmer, viewer). Draw it from rulings or from code, never from memory. Every box gets a line in the gate: the file and the test that prove it. No map, no approval.
+5. **Present to the owner for approval, map first.** The owner's yes by name covers the map. Surface open questions and TBDs, each with a recommendation. Wait for an explicit yes by name. Nothing is approved in advance.
+6. **Build against the PRD.** Its acceptance criteria are the checklist qa-gate verifies before commit. Once approved, write the sprint's gates checklist at `docs/prds/gates/<plan name>.md` before any build code: one gate per acceptance criterion, with the qa-gate gate last.
 7. **Update after ship.** If decisions changed during the build, update the PRD to match what shipped and mark it `Status: Shipped`. A PRD that lies about the system is worse than no PRD.
 
 ## Decision tree: Lite or Full
@@ -61,6 +62,7 @@ Status: Draft | Date: | Sprint:
 **Out of scope:** [What this does NOT touch]
 **Connections checked:** [Confirm: no schema / no endpoints / no agents / no scheduled jobs / no new deps]
 **Acceptance criteria:** [Testable statements]
+**Map:** [Process map: every screen, state, email and side touched, each box with its file and test. See templates/process-map.md]
 **Risk:** [Worst case + rollback plan]
 ```
 
@@ -75,6 +77,7 @@ The full template is at `assets/prd-template.md`. Sections:
 3. **Non-goals.** Explicit exclusions. This section prevents agent drift more than any other.
 4. **Users and use cases,** including edge cases.
 5. **Functional requirements and acceptance criteria.** Numbered FR-1, FR-2, each testable. These are qa-gate's contract.
+5b. **Process map.** The flow drawn box by box, with a gate line per box (file and test). The map is the contract the build is checked against.
 6. **Architecture and connections.** THE CORE SECTION.
 7. **Failure modes and edge cases.**
 8. **Rollout and rollback.** Switch (feature flag) name, migration order, how to undo.
@@ -92,18 +95,21 @@ Fill it from the actual code, not memory:
 ## Approval gate
 
 Present with:
+- The process map, first
 - A 3 to 5 sentence summary (what, why, biggest risk)
 - The open questions, each with a recommendation
 - Lite or Full, and why
 
-Don't start until the owner says approved. If something mid-build invalidates part of the PRD: STOP, update the PRD, flag it, and get re-approval on the changed sections.
+Don't start until the owner says approved. If something mid-build invalidates part of the PRD: STOP, update the PRD and its map, flag it, and get re-approval on the changed sections.
 
 ## Handoff to qa-gate
 
 - Every acceptance criterion is verified before commit.
+- Every box on the process map gets Match, Different or Not built before merge.
 - Every scheduled job named in Section 6 appears in qa-gate's scheduled-job check.
 - Every schema change passes qa-gate's schema check.
 - The qa-gate output includes: `PRD: [filename] - all acceptance criteria verified: YES/NO`. A NO blocks the commit.
+- With a gates checklist, YES may only be written when `scripts/gates-check.sh` shows 0 open runnable gates.
 
 ## Escalation
 
