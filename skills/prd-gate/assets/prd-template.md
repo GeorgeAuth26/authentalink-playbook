@@ -55,6 +55,19 @@ Numbered, testable. These become the qa-gate contract.
 | FR-1 | | | Must |
 | FR-2 | | | Should |
 
+## 5b. Process Map (the contract)
+
+[Draw from rulings or code, never memory. Every screen, every state (loading, in flight, success, error, empty, expired), every email, every side (asker, confirmer, viewer). Start from `templates/process-map.md` in the playbook.]
+
+```mermaid
+flowchart TD
+  A1["SIDE: Screen or state"] --> A2["SIDE: Next"]
+```
+
+| Box | File | Test | Before merge: Match / Different / Not built (file:line) |
+|---|---|---|---|
+| | | | |
+
 ## 6. Architecture & Connections (CORE SECTION: codebase inspection required)
 
 ### 6.1 Data Model Impact
